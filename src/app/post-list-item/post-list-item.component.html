@@ -1,8 +1,9 @@
 <li class="list-group-item" 
     [ngClass]="{'list-group-item': true,
-                'list-group-item-success': loveIts > 0,
-                'list-group-item-danger': loveIts < 0}">
-  <h4>{{ title }}</h4>
-  {{content}}
-
+                'list-group-item-success': post.loveIts > 0,
+                'list-group-item-danger': post.loveIts < 0}">
+  <h4>{{ post.title }}</h4>
+  {{post.content}}
+  <button class="btn btn-success" *ngIf="!authStatus" (click)="onSignIn()">Se connecter</button>
+  <button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()">Se déconnecter</button>
 </li>
