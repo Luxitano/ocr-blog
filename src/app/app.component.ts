@@ -9,15 +9,11 @@ import {Post} from "./models/post.model";
 export class AppComponent {
   title = 'ocr';
 
-  postList = []
+  postList = [];
 
-  content = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-  
   constructor(){
-	this.postList.push(new Post("Mon premier post",this.content));
-    this.postList.push(new Post("Mon premier post",this.content));
-    this.postList.push(new Post("Mon premier post",this.content));
+	this.postList.push(new Post("Mon premier post","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis"));
+    this.postList.push(new Post("Mon deuxième post","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis"));
+    this.postList.push(new Post("Encore un post","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"));
   }
-
-
 }
