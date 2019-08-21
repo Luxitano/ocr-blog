@@ -2,7 +2,7 @@
     [ngClass]="{'list-group-item': true,
                 'list-group-item-success': post.loveIts > 0,
                 'list-group-item-danger': post.loveIts < 0}">
-  <span style="float:right"><i>{{post.created_at  | date: 'MM/dd/yyyy, hh:ss a'}}</i></span>
+  <span style="float:right"><i>{{post.created_at  | date: 'MM/dd/yyyy, hh:mm a'}}</i></span>
   <h3><b>{{post.title}}</b></h3>
   <p>{{post.content}}</p>
   <p>
