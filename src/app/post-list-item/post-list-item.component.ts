@@ -14,10 +14,14 @@ export class PostListItemComponent implements OnInit {
   }
 
   onLoveIt() {
-	this.post.loveIts++;
+	  this.post.loveIts++;
   }
 
   onDontLoveIt() {
-	this.post.loveIts--;
+	  this.post.loveIts--;
+  }
+
+  onDeletePost(post:Post) {
+
   }
 }

@@ -1,19 +1,30 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import {Post} from "./models/post.model";
+import {PostsService} from "./services/posts.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
   title = 'ocr';
 
-  postList = [];
+  posts: Post[];
 
-  constructor(){
-	this.postList.push(new Post("Mon premier post","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis"));
-    this.postList.push(new Post("Mon deuxième post","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis"));
-    this.postList.push(new Post("Encore un post","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"));
+  postsSubscription: Subscription;
+
+  constructor(private postService: PostsService){
+
+  }
+
+  ngOnInit(): void {
+    this.postsSubscription = this.postService.postsSubject.subscribe(
+      (posts: Post[]) => {
+        this.posts = posts;
+      }
+    )
   }
 }
