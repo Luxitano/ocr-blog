@@ -18,8 +18,8 @@ export class PostsService {
     this.postsSubject.next(this.posts);
   }
 
-  createNewPost(title,content){
-    this.posts.push(new Post(title,content));
+  createNewPost(post:Post){
+    this.posts.push(post);
     this.emitPosts();
   }
 
