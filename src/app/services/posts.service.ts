@@ -23,33 +23,23 @@ export class PostsService {
     this.emitPosts();
   }
 
-  removePost(post:Post){
-    this.posts = this.posts.slice(this.posts.indexOf(post),1);
+  removePost(postId:number){
+    this.posts.splice(postId,1);
     this.emitPosts();
   }
 
 
   onLoveIt(postId:number) {
-	  let post = this.posts.find(
-      		(p) => {
-        		return p.id === postId;
-      		}
-      );
-      if(post) {
-	  	post.loveIts++;
-        this.emitPosts();
-      }
+    if(this.posts[postId]) {
+      this.posts[postId].loveIts++;
+      this.emitPosts();
+    }
   }
 
   onDontLoveIt(postId:number) {
-	  let post = this.posts.find(
-      		(p) => {
-        		return p.id === postId;
-      		}
-      );
-      if(post) {
-	  	post.loveIts--;
-        this.emitPosts();
-      }
+    if(this.posts[postId]) {
+      this.posts[postId].loveIts--;
+      this.emitPosts();
+    }
   }
 }

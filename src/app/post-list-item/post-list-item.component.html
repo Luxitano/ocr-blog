@@ -4,11 +4,10 @@
                 'list-group-item-danger': post.loveIts < 0}">
   <span style="float:right"><i>{{post.created_at  | date: 'MM/dd/yyyy, hh:mm a'}}</i></span>
   <h3><b>{{post.title}}</b></h3>
-  <p>{{post.content}}</p>
+  <p style="margin: 20px">{{post.content}}</p>
   <p>
   	<button class="btn btn-success" (click)="onLoveIt()">Love it!</button>&nbsp;
-  	<button class="btn btn-danger" (click)="onDontLoveIt()">Don't love it!'</button>
-    <button class="btn btn-danger" (click)="onDeletePost()">Supprimer post</button>
-
+  	<button class="btn btn-danger" (click)="onDontLoveIt()">Don't love it!</button>
+    <button class="btn btn-danger pull-right" (click)="onDeletePost()">Supprimer post</button>
   </p>
 </li>
