@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PostsService } from '../services/posts.service';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss']
 })
-export class PostListComponent implements OnInit {
+export class PostListComponent implements OnInit, OnDestroy {
 
   posts: any[];
   postSubscription: Subscription;
